@@ -27,12 +27,13 @@ class ViewPagerLayoutManager : LinearLayoutManager {
     }
 
     constructor(context: Context?, orientation: Int, reverseLayout: Boolean) :
-        super(context, orientation, reverseLayout) {
+            super(context, orientation, reverseLayout) {
     }
 
 
     override fun onAttachedToWindow(view: RecyclerView) {
         super.onAttachedToWindow(view)
+        //将PagerSnapHelper绑定到view上
         mPagerSnapHelper.attachToRecyclerView(view)
         this.mRecyclerView = view
         mRecyclerView?.addOnChildAttachStateChangeListener(mChildAttachStateChangeListener)
@@ -122,6 +123,9 @@ class ViewPagerLayoutManager : LinearLayoutManager {
         }
 }
 
+/**
+ * 通过PagerSnapHelper 这个帮助类来实现我们滑动recycleView页面时是一页一页上下滑动
+ */
 class SquarePagerSnapHelper : PagerSnapHelper() {
 
     private var verticalHelper: OrientationHelper? = null
@@ -157,7 +161,7 @@ class SquarePagerSnapHelper : PagerSnapHelper() {
         for (i in 0 until childCount) {
             val child = layoutManager.getChildAt(i)
             val childCenter = (helper.getDecoratedStart(child) +
-                helper.getDecoratedMeasurement(child) / 2)
+                    helper.getDecoratedMeasurement(child) / 2)
             val absDistance = Math.abs(childCenter - center)
 
             if (absDistance < absClosest) {
