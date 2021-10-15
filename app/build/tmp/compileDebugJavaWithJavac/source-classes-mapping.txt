@@ -1,0 +1,10 @@
+com/sun/carddemo/widget/MsgView.java
+ com.sun.carddemo.widget.MsgView
+com/sun/carddemo/util/MD5.java
+ com.sun.carddemo.util.MD5
+com/sun/carddemo/BuildConfig.java
+ com.sun.carddemo.BuildConfig
+com/sun/carddemo/widget/CustomTabEntity.java
+ com.sun.carddemo.widget.CustomTabEntity
+com/sun/carddemo/widget/OnTabSelectListener.java
+ com.sun.carddemo.widget.OnTabSelectListener
